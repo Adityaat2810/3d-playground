@@ -2,8 +2,7 @@
 
 import { Canvas } from '@react-three/fiber'
 import { AnimatedBox } from 'components/AnimatedBox'
-import { useRef } from 'react'
-
+import { CameraOrbitController } from 'components/CameraOrbitController'
 
 export default function Page() {
 
@@ -11,6 +10,7 @@ export default function Page() {
     
     <main className='h-full w-full'>
       <Canvas>
+        <CameraOrbitController/>
         <ambientLight intensity={0.1} />
         <directionalLight color="blue" position={[0, 0, 5]} />
         <AnimatedBox/>
