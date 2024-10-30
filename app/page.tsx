@@ -11,7 +11,7 @@ export default function Page() {
   return (
 
     <main className='h-full w-full'>
-      <Canvas orthographic camera={{left:-5,right:5 , top:5 ,bottom:-5 , zoom:50}}>
+      <Canvas  camera={{}}>
         
         {testing ? <Stats /> : null}
         {testing ? <axesHelper args={[4]} /> : null}
@@ -21,7 +21,11 @@ export default function Page() {
         <OrbitControls />
         <ambientLight intensity={0.1} />
         <directionalLight color="blue" position={[0, 0, 5]} />
-        <AnimatedBox isTesting={testing} />
+
+        <mesh scale={[1, 1, 1]}>
+          <coneGeometry  />
+          <meshStandardMaterial color={"blue"}  />
+        </mesh>
       </Canvas>
     </main>
   )
