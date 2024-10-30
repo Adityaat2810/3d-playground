@@ -11,10 +11,11 @@ export default function Page() {
   return (
 
     <main className='h-full w-full'>
-      <Canvas>
+      <Canvas orthographic camera={{left:-5,right:5 , top:5 ,bottom:-5 , zoom:50}}>
+        
         {testing ? <Stats /> : null}
         {testing ? <axesHelper args={[4]} /> : null}
-        {/* grid [size, division] */}
+        {/* grid [size, division ] */}
         {testing ? <gridHelper args={[10,10]} /> : null}
 
         <OrbitControls />
@@ -25,3 +26,13 @@ export default function Page() {
     </main>
   )
 }
+
+/**
+ * Perspective vs Orthogtaphic camera 
+ *  a perspective camera simulates how the human eye sees depth,
+ *  making objects appear smaller as they get further away, 
+ * while an orthographic camera does not have perspective, 
+ *  meaning objects maintain their size regardless 
+ * of their distance from the camera, which is often used 
+ * for creating 2D-like views 
+ */

@@ -18,3 +18,8 @@ export const CameraOrbitController = () => {
 
     return null;
 }
+
+/**
+ * Perspective Camera => like eyes
+ * StereoCamera => 
+ */
