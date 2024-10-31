@@ -5,6 +5,38 @@ import { Canvas } from '@react-three/fiber'
 import { AnimatedBox } from 'components/AnimatedBox'
 import { CameraOrbitController } from 'components/CameraOrbitController'
 
+const TextedSpheres=()=>{
+  /**
+   * Scale in Mesh********************************* 
+   * Scale in mesh refers to the process of adjusting 
+   * the size of a mesh object or particle distribution
+   * 
+   * {size in x y and z }
+   * 
+   * **********Position*****************
+   * where you want to place partiualar mesh in axis
+   */
+  return (
+    <>
+      <mesh scale={[0.5, 0.5, 0.5] } position={[-1,0,0]}>
+        <sphereGeometry />
+        <meshStandardMaterial color={"blue"}/>
+      </mesh>
+
+      <mesh scale={[0.5, 0.5, 0.5]} position={[0, 0, 0]}>
+        <sphereGeometry  />
+        <meshStandardMaterial color={"blue"} />
+      </mesh>
+      
+      <mesh scale={[0.5, 0.5, 0.5]} position={[1,0,0]}>
+        <sphereGeometry />
+        <meshStandardMaterial color={"blue"} />
+      </mesh>
+      
+    </>
+    
+  )
+}
 export default function Page() {
   const testing = true;
 
@@ -19,13 +51,10 @@ export default function Page() {
         {testing ? <gridHelper args={[10,10]} /> : null}
 
         <OrbitControls />
-        <ambientLight intensity={0.1} />
-        <directionalLight color="blue" position={[0, 0, 5]} />
+        <ambientLight intensity={0.3} />
+        <directionalLight color="blue" position={[0, 5, 0]} />
 
-        <mesh scale={[1, 1, 1]}>
-          <coneGeometry  />
-          <meshStandardMaterial color={"blue"}  />
-        </mesh>
+       <TextedSpheres/>
       </Canvas>
     </main>
   )
